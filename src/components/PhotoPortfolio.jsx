@@ -6,9 +6,9 @@ const PhotoPortfolio = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const galleryImages = [
-    '/gallery1.png',
-    '/gallery2.png',
-    '/gallery3.png',
+    'gallery1.png',
+    'gallery2.png',
+    'gallery3.png',
   ];
 
   return (
@@ -32,7 +32,7 @@ const PhotoPortfolio = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <img src="/photo_hero.png" alt="Photography Hero" />
+          <img src="photo_hero.png" alt="Photography Hero" />
         </motion.div>
 
         {/* Expandable Gallery */}

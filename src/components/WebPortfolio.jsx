@@ -6,8 +6,8 @@ const WebPortfolio = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const webCases = [
-    '/web_case1.png',
-    '/web_case2.png',
+    'web_case1.png',
+    'web_case2.png',
   ];
 
   return (
@@ -31,7 +31,7 @@ const WebPortfolio = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <img src="/web_mockup.png" alt="Web Design Mockup" />
+          <img src="web_mockup.png" alt="Web Design Mockup" />
         </motion.div>
 
         {/* Expandable Case Studies */}

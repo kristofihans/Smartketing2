@@ -32,7 +32,7 @@ const Hero = () => {
         <video
           ref={forwardRef}
           className={`hero__video ${activeVideo === 'forward' ? 'hero__video--active' : ''}`}
-          src="/herobackgroundvideo.mp4"
+          src="herobackgroundvideo.mp4"
           autoPlay
           muted
           playsInline
@@ -42,7 +42,7 @@ const Hero = () => {
         <video
           ref={reverseRef}
           className={`hero__video ${activeVideo === 'reverse' ? 'hero__video--active' : ''}`}
-          src="/herobackgroundvideoreverse.mp4"
+          src="herobackgroundvideoreverse.mp4"
           muted
           playsInline
           preload="auto"
