@@ -1,0 +1,93 @@
+/* ========================================
+   OUTRO & CREDITS STYLES
+   ======================================== */
+
+.outro {
+  position: relative;
+  padding: var(--space-3xl) var(--space-lg);
+  background: var(--color-bg);
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Credits Section */
+.credits {
+  margin-bottom: var(--space-3xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.credits__label {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: var(--space-lg);
+}
+
+.credits__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2xl);
+  max-width: 1000px;
+}
+
+.client-logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.1em;
+  transition: var(--transition-base);
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+
+.client-logo:hover {
+  color: #fff;
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Cinematic Fade Animation */
+.credits-stagger-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Separator */
+.outro__separator {
+  width: 100px;
+  height: 2px;
+  background: var(--gradient-primary);
+  margin: var(--space-2xl) auto;
+  opacity: 0.5;
+}
+
+/* Reuse existing contact styles or tweak them here */
+.outro .contact__container {
+  padding: 0;
+  background: transparent;
+}
+
+.outro .contact__title {
+  margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .credits__grid {
+    gap: var(--space-xl);
+  }
+  
+  .client-logo {
+    font-size: 1.2rem;
+  }
+}
