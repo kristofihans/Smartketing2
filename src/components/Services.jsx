@@ -54,10 +54,6 @@ const Services = () => {
 
   // Map scroll progress to frame index (11 to 120)
   const frameIndex = useTransform(scrollYProgress, [0, 1], [startFrame, endFrame]);
-  
-  // Sync content opacity/position with scroll progress (No blur)
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.3, 0.8, 1], [0, 1, 1, 0]);
-  const contentY = useTransform(scrollYProgress, [0, 0.3], [100, 0]);
 
   useEffect(() => {
     const unsubscribe = frameIndex.on("change", (latest) => {
@@ -65,7 +61,7 @@ const Services = () => {
     });
     return () => unsubscribe();
   }, [frameIndex]);
-
+  
   // Preload images
   useEffect(() => {
     const preloadImages = () => {
@@ -96,10 +92,6 @@ const Services = () => {
       {/* Content Layer */}
       <motion.div 
         className="services__content-wrapper"
-        style={{ 
-          opacity: contentOpacity,
-          y: contentY
-        }}
       >
         <div className="services__header">
           <h2 className="services__title">
