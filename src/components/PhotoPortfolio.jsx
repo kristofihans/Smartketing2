@@ -12,7 +12,7 @@ const PhotoPortfolio = () => {
   ];
 
   return (
-    <section className="portfolio-section portfolio-section--elevated" id="photo-portfolio">
+    <section className="portfolio-section portfolio-section--elevated" id="photo">
       <div className="section-container">
         <motion.div 
           className="section-header"
@@ -20,8 +20,7 @@ const PhotoPortfolio = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="section-label">Photography</span>
-          <h2 className="section-title">Branding <span className="gradient-text">& Product</span></h2>
+          <h2 className="section-title">Branding & Product</h2>
         </motion.div>
 
         {/* Hero Photograph */}

@@ -15,30 +15,20 @@ const Outro = () => {
   return (
     <section className="outro" id="contact">
       <div className="credits">
-        <motion.span 
-          className="credits__label"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5 }}
-        >
-          Partenerii Noștri
-        </motion.span>
-        
         <div className="credits__grid">
           {clients.map((client, i) => (
             <motion.span 
               key={i}
               className="client-logo"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 0.6, y: 0 }}
+              initial={{ opacity: 0, y: 30, filter: 'blur(6px)' }}
+              whileInView={{ opacity: 0.5, y: 0, filter: 'blur(0px)' }}
               viewport={{ once: true }}
               transition={{ 
                 duration: 1.2, 
-                delay: i * 0.2,
+                delay: i * 0.15,
                 ease: [0.16, 1, 0.3, 1]
               }}
-              whileHover={{ opacity: 1, scale: 1.1, color: '#fff' }}
+              whileHover={{ opacity: 1, scale: 1.08, color: '#ef4444' }}
             >
               {client}
             </motion.span>
@@ -50,13 +40,13 @@ const Outro = () => {
 
       <motion.div
         className="contact__container"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 50, filter: 'blur(8px)' }}
+        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
       >
         <h2 className="contact__title">
-          Ești gata să <span className="gradient-text">creștem</span>?
+          Ești gata să creștem?
         </h2>
         <p className="contact__subtitle">
           Contactează-ne acum și hai să dăm viață ideilor tale.

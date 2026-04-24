@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import './About.css';
 
 const stats = [
@@ -9,18 +10,30 @@ const stats = [
 ];
 
 const About = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
+
+  const glowX = useTransform(scrollYProgress, [0, 1], [100, -100]);
+
   return (
-    <section className="about" id="about">
-      <div className="about__glow" />
+    <section className="about" id="about" ref={sectionRef}>
+      {/* Parallax ambient glow */}
+      <motion.div
+        className="about__glow"
+        style={{ x: glowX }}
+      />
 
       <div className="about__container">
         {/* Stats Visual */}
         <motion.div
           className="about__visual"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: -60, filter: 'blur(8px)' }}
+          whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="about__stats-grid">
             {stats.map((stat, i) => (
@@ -42,14 +55,13 @@ const About = () => {
         {/* Text Content */}
         <motion.div
           className="about__content"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: 60, filter: 'blur(8px)' }}
+          whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="about__label">Despre noi</p>
           <h2 className="about__title">
-            Nu suntem o agenție <span className="gradient-text">obișnuită</span>
+            Nu suntem o agenție obișnuită
           </h2>
           <p className="about__text">
             Suntem o echipă de creatori digitali pasionați de rezultate. Combinăm strategia cu creativitatea pentru a construi prezențe online care nu doar arată bine — ci și convertesc.

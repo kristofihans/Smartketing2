@@ -11,7 +11,7 @@ const WebPortfolio = () => {
   ];
 
   return (
-    <section className="portfolio-section" id="web-portfolio">
+    <section className="portfolio-section" id="web">
       <div className="section-container">
         <motion.div 
           className="section-header"
@@ -19,8 +19,7 @@ const WebPortfolio = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="section-label">Web & SEO</span>
-          <h2 className="section-title">Digital <span className="gradient-text">Experiences</span></h2>
+          <h2 className="section-title">Digital Experiences</h2>
         </motion.div>
 
         {/* Mockup Display */}

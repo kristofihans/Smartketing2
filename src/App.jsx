@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Services from './components/Services';
 import VideoPortfolio from './components/VideoPortfolio';
 import PhotoPortfolio from './components/PhotoPortfolio';
 import WebPortfolio from './components/WebPortfolio';
@@ -12,6 +13,7 @@ function App() {
     <div className="app">
       <Navbar />
       <Hero />
+      <Services />
       <VideoPortfolio />
       <PhotoPortfolio />
       <WebPortfolio />

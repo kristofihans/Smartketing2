@@ -70,13 +70,6 @@ const Hero = () => {
         </div>
       </motion.div>
 
-      {/* Glow Line */}
-      <motion.div
-        className="hero__glow-line"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ delay: 1.8, duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-      />
     </section>
   );
 };

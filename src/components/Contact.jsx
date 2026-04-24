@@ -13,9 +13,8 @@ const Contact = () => {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
       >
-        <p className="contact__label">Contact</p>
         <h2 className="contact__title">
-          Hai să <span className="gradient-text">vorbim</span>
+          Hai să vorbim
         </h2>
         <p className="contact__subtitle">
           Ai un proiect în minte? Completează formularul și revenim cu un plan personalizat.

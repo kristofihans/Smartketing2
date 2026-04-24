@@ -4,8 +4,9 @@ import './Navbar.css';
 
 const navLinks = [
   { label: 'Servicii', href: '#services' },
-  { label: 'Portofoliu', href: '#portfolio' },
-  { label: 'Despre', href: '#about' },
+  { label: 'Video', href: '#video' },
+  { label: 'Foto', href: '#photo' },
+  { label: 'Web', href: '#web' },
   { label: 'Contact', href: '#contact' },
 ];
 

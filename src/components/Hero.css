@@ -1,5 +1,6 @@
 /* ========================================
    HERO SECTION — Full-screen Video
+   Architectural · Cobalt
    ======================================== */
 
 .hero {
@@ -40,9 +41,9 @@
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    transparent 50%,
-    rgba(10, 10, 15, 0.4) 75%,
-    rgba(10, 10, 15, 0.85) 100%
+    transparent 40%,
+    rgba(10, 10, 12, 0.3) 70%,
+    rgba(10, 10, 12, 0.85) 100%
   );
   pointer-events: none;
 }
@@ -54,19 +55,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding-bottom: 3rem;
+  gap: 1.2rem;
+  padding-bottom: 3.6rem;
   cursor: default;
 }
 
 .hero__scroll-text {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.75);
-  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.06em;
   text-align: center;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
   padding: 0 var(--space-md);
 }
 
@@ -79,10 +80,10 @@
 }
 
 .hero__chevron {
-  width: 20px;
-  height: 20px;
-  border-right: 2px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  width: 18px;
+  height: 18px;
+  border-right: 1.5px solid rgba(220, 38, 38, 0.7);
+  border-bottom: 1.5px solid rgba(220, 38, 38, 0.7);
   transform: rotate(45deg);
   animation: chevronBounce 2s var(--ease-out-expo) infinite;
 }
@@ -113,24 +114,6 @@
   }
 }
 
-/* Glow line at bottom of hero */
-.hero__glow-line {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  z-index: 3;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--color-accent-1) 30%,
-    var(--color-accent-2) 70%,
-    transparent 100%
-  );
-  opacity: 0.4;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
@@ -140,7 +123,7 @@
   }
 
   .hero__scroll-text {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 
   .hero__scroll-suggestion {

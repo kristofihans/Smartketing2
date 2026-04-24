@@ -1,44 +1,46 @@
 /* ========================================
    SMARTKETING — Global Design System
+   Premium Architectural · 2026
    ======================================== */
 
 /* CSS Custom Properties */
 :root {
-  /* Color Palette — Dark reddish luxe */
-  --color-bg: #0a0608;
-  --color-bg-elevated: #120d0f;
-  --color-bg-glass: rgba(18, 12, 14, 0.7);
-  --color-surface: #1a1215;
+  /* Color Palette — Deep Charcoal + Matte Black */
+  --color-bg: #0a0a0c;
+  --color-bg-elevated: #111114;
+  --color-bg-glass: rgba(16, 16, 20, 0.65);
+  --color-surface: #18181c;
   --color-border: rgba(255, 255, 255, 0.06);
-  --color-border-hover: rgba(255, 255, 255, 0.12);
+  --color-border-hover: rgba(255, 255, 255, 0.14);
+  --border-glass: 1px solid rgba(255, 255, 255, 0.08);
 
-  /* Accent — Cool crimson to deep rose */
+  /* Accent — Deep Crimson */
   --color-accent-1: #dc2626;
-  --color-accent-2: #e11d48;
-  --color-accent-3: #9f1239;
-  --gradient-primary: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-2));
-  --gradient-secondary: linear-gradient(135deg, var(--color-accent-3), var(--color-accent-1));
-  --gradient-glow: radial-gradient(ellipse at 50% 0%, rgba(220, 38, 38, 0.12) 0%, transparent 70%);
+  --color-accent-2: #ef4444;
+  --color-accent-3: #b91c1c;
+  --gradient-primary: var(--color-accent-1);
+  --gradient-secondary: var(--color-accent-3);
+  --gradient-glow: radial-gradient(ellipse at 50% 0%, rgba(220, 38, 38, 0.10) 0%, transparent 70%);
 
-  /* Typography */
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Space Grotesk', sans-serif;
+  /* Typography — Syne Display + Inter Body */
+  --font-heading: 'Monda', sans-serif;
+  --font-body: 'Inter', sans-serif;
 
-  /* Spacing */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 2rem;
-  --space-xl: 4rem;
-  --space-2xl: 6rem;
-  --space-3xl: 8rem;
+  /* Spacing — 20% increase for luxury breathing room */
+  --space-xs: 0.3rem;
+  --space-sm: 0.6rem;
+  --space-md: 1.2rem;
+  --space-lg: 2.4rem;
+  --space-xl: 4.8rem;
+  --space-2xl: 7.2rem;
+  --space-3xl: 9.6rem;
 
-  /* Border radius */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 28px;
-  --radius-full: 9999px;
+  /* Border radius — Brutalist: sharp corners */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-full: 0px;
 
   /* Transitions */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -47,10 +49,13 @@
   --transition-base: 400ms var(--ease-out-expo);
   --transition-slow: 700ms var(--ease-out-expo);
 
-  /* Shadows */
-  --shadow-glow-sm: 0 0 20px rgba(220, 38, 38, 0.2);
-  --shadow-glow-md: 0 0 40px rgba(220, 38, 38, 0.25);
-  --shadow-glow-lg: 0 0 80px rgba(220, 38, 38, 0.3);
+  /* Shadows — Crimson glow */
+  --shadow-glow-sm: 0 0 20px rgba(220, 38, 38, 0.15);
+  --shadow-glow-md: 0 0 40px rgba(220, 38, 38, 0.2);
+  --shadow-glow-lg: 0 0 80px rgba(220, 38, 38, 0.25);
+
+  /* Noise */
+  --noise-opacity: 0.035;
 }
 
 /* Reset & Base */
@@ -72,7 +77,7 @@ html {
 body {
   font-family: var(--font-body);
   background-color: var(--color-bg);
-  color: #e4e4e7;
+  color: #d4d4d8;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -80,8 +85,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
 }
 
 a {
@@ -104,7 +109,7 @@ button {
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -113,7 +118,7 @@ button {
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-accent-1);
-  border-radius: var(--radius-full);
+  border-radius: 0px;
 }
 
 /* Selection */
@@ -124,15 +129,12 @@ button {
 
 /* Utility Classes */
 .gradient-text {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-accent-1);
 }
 
 .glass {
   background: var(--color-bg-glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--color-border);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: var(--border-glass);
 }

@@ -1,11 +1,12 @@
 /* ========================================
    FOOTER
+   Architectural · Cobalt · Brutalist
    ======================================== */
 
 .footer {
   padding: var(--space-xl) var(--space-lg) var(--space-lg);
   background: var(--color-bg-elevated);
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .footer__container {
@@ -21,16 +22,13 @@
 .footer__logo {
   font-family: var(--font-heading);
   font-size: 1.3rem;
-  font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-weight: 700;
+  color: #fff;
 }
 
 .footer__copy {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .footer__socials {
@@ -41,20 +39,21 @@
 }
 
 .footer__social-link {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
   transition: var(--transition-fast);
+  letter-spacing: 0.04em;
 }
 
 .footer__social-link:hover {
-  color: var(--color-accent-1);
+  color: var(--color-accent-2);
 }
 
 /* Divider */
 .footer__divider {
   width: 100%;
   height: 1px;
-  background: var(--color-border);
+  background: rgba(255, 255, 255, 0.04);
   margin: var(--space-lg) 0 var(--space-md);
 }
 
@@ -75,18 +74,18 @@
 }
 
 .footer__bottom-link {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.25);
   transition: var(--transition-fast);
 }
 
 .footer__bottom-link:hover {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .footer__credit {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 768px) {

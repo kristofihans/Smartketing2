@@ -1,5 +1,6 @@
 /* ========================================
    OUTRO & CREDITS STYLES
+   Architectural · Cobalt
    ======================================== */
 
 .outro {
@@ -22,11 +23,11 @@
 
 .credits__label {
   font-family: var(--font-heading);
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.4em;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.35);
   margin-bottom: var(--space-lg);
 }
 
@@ -41,35 +42,28 @@
 
 .client-logo {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.15em;
   transition: var(--transition-base);
-  filter: grayscale(1);
-  opacity: 0.5;
+  opacity: 0.4;
+  cursor: default;
 }
 
 .client-logo:hover {
-  color: #fff;
-  filter: grayscale(0);
+  color: var(--color-accent-2);
   opacity: 1;
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
-/* Cinematic Fade Animation */
-.credits-stagger-item {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-/* Separator */
+/* Separator — Cobalt line */
 .outro__separator {
-  width: 100px;
+  width: 80px;
   height: 2px;
-  background: var(--gradient-primary);
+  background: var(--color-accent-1);
   margin: var(--space-2xl) auto;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 /* Reuse existing contact styles or tweak them here */
@@ -88,6 +82,6 @@
   }
   
   .client-logo {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }

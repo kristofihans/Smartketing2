@@ -1,5 +1,6 @@
 /* ========================================
    CONTACT SECTION
+   Brutalist · Cobalt · Glassmorphism
    ======================================== */
 
 .contact {
@@ -16,24 +17,26 @@
 }
 
 .contact__label {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   color: var(--color-accent-1);
   margin-bottom: var(--space-sm);
 }
 
 .contact__title {
   font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
   color: #fff;
   margin-bottom: var(--space-md);
 }
 
 .contact__subtitle {
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
   margin-bottom: var(--space-xl);
+  line-height: 1.8;
 }
 
 /* Form */
@@ -53,49 +56,58 @@
 .contact__input,
 .contact__textarea {
   width: 100%;
-  padding: 1rem 1.25rem;
+  padding: 1.1rem 1.4rem;
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #fff;
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  background: rgba(16, 16, 20, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0px;
   outline: none;
   transition: var(--transition-fast);
 }
 
 .contact__input::placeholder,
 .contact__textarea::placeholder {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.02em;
 }
 
 .contact__input:focus,
 .contact__textarea:focus {
   border-color: var(--color-accent-1);
-  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+  background: rgba(16, 16, 20, 0.7);
 }
 
 .contact__textarea {
   resize: vertical;
-  min-height: 140px;
+  min-height: 160px;
 }
 
+/* Submit — Brutalist */
 .contact__submit {
-  padding: 1rem 2.5rem;
-  font-size: 1rem;
+  padding: 1.1rem 3rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: #fff;
-  background: var(--gradient-primary);
-  border-radius: var(--radius-full);
+  background: var(--color-accent-1);
+  border-radius: 0px;
   transition: var(--transition-fast);
-  box-shadow: var(--shadow-glow-sm);
   align-self: center;
-  min-width: 200px;
+  min-width: 220px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--color-accent-1);
 }
 
 .contact__submit:hover {
+  background: transparent;
+  color: var(--color-accent-2);
+  border-color: var(--color-accent-2);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-glow-md);
 }
 
 .contact__submit:active {
@@ -108,7 +120,7 @@
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(220, 38, 38, 0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.05) 0%, transparent 70%);
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);

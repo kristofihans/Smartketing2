@@ -1,131 +1,186 @@
 /* ========================================
-   SERVICES SECTION
+   SERVICES SECTION (With Frame Background)
+   Architectural · Immersive · Bento
    ======================================== */
 
 .services {
   position: relative;
-  padding: var(--space-3xl) var(--space-lg);
+  height: 400vh; /* Deep scroll for animation sync */
   background: var(--color-bg);
-  overflow: hidden;
 }
 
-.services::before {
-  content: '';
-  position: absolute;
+.services__background {
+  position: sticky;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(220, 38, 38, 0.08) 0%, transparent 70%);
-  pointer-events: none;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  overflow: hidden;
+  background: #000;
+}
+
+.services__canvas-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services__frame-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5) grayscale(0.2); /* Muted for background */
+}
+
+.services__overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(10, 10, 12, 0.4) 100%);
+  z-index: 2;
+}
+
+/* Content over background */
+.services__content-wrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl) var(--space-lg);
+  pointer-events: none; /* Only cards should be interactive */
 }
 
 .services__header {
   text-align: center;
+  max-width: 800px;
   margin-bottom: var(--space-xl);
 }
 
-.services__label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--color-accent-1);
-  margin-bottom: var(--space-sm);
-}
-
 .services__title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
   color: #fff;
   margin-bottom: var(--space-md);
+  line-height: 1;
 }
 
 .services__subtitle {
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.5);
-  max-width: 550px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.4);
+  max-width: 500px;
   margin: 0 auto;
 }
 
-/* Cards Grid */
+/* Grid Layout */
 .services__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-lg);
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
   max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  pointer-events: auto; /* Re-enable pointer events for cards */
 }
 
-.service-card {
+/* Bento Card Styling — Glassmorphism */
+.bento-card {
   position: relative;
-  padding: var(--space-xl) var(--space-lg);
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  background: rgba(16, 16, 20, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
   transition: var(--transition-base);
   overflow: hidden;
 }
 
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-primary);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: var(--transition-base);
-}
-
-.service-card:hover {
-  border-color: var(--color-border-hover);
+.bento-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(16, 16, 20, 0.6);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-glow-sm);
 }
 
-.service-card:hover::before {
-  transform: scaleX(1);
+.bento-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xs);
 }
 
-.service-card__icon {
-  font-size: 2.5rem;
-  margin-bottom: var(--space-md);
-  display: block;
-}
-
-.service-card__title {
-  font-size: 1.3rem;
-  color: #fff;
-  margin-bottom: var(--space-sm);
-}
-
-.service-card__desc {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.5);
-  line-height: 1.7;
-}
-
-/* Number badge */
-.service-card__number {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+.bento-card__number {
   font-family: var(--font-heading);
-  font-size: 3rem;
-  font-weight: 800;
+  font-size: 2.5rem;
+  font-weight: 700;
   color: rgba(255, 255, 255, 0.03);
   line-height: 1;
 }
 
+.bento-card__icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(220, 38, 38, 0.04);
+}
+
+.bento-card__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.bento-card__desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.6;
+}
+
+/* Bento Grid Spans */
+.span-2 {
+  grid-column: span 2;
+}
+
+.span-1 {
+  grid-column: span 1;
+}
+
+@media (max-width: 1024px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .services {
-    padding: var(--space-2xl) var(--space-md);
+    height: auto; /* Disable scroll-background sync on mobile for better usability? Or keep it? */
   }
-
+  
+  .services__background,
+  .services__content-wrapper {
+    position: relative;
+    height: auto;
+  }
+  
   .services__grid {
     grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .span-2, .span-1 {
+    grid-column: span 1;
   }
 }

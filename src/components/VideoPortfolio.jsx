@@ -6,14 +6,13 @@ const VideoPortfolio = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const additionalVideos = [
-    'portfoliovideo1.mp4',
     'portfoliovideo2.mp4',
     'portfoliovideo3.mp4',
     'portfoliovideo4.mp4',
   ];
 
   return (
-    <section className="portfolio-section" id="video-portfolio">
+    <section className="portfolio-section" id="video">
       <div className="section-container">
         <motion.div 
           className="section-header"
@@ -21,8 +20,7 @@ const VideoPortfolio = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="section-label">Video Content</span>
-          <h2 className="section-title">Visual <span className="gradient-text">Stories</span></h2>
+          <h2 className="section-title">Visual Stories</h2>
         </motion.div>
 
         {/* Flagship Video */}
