@@ -72,7 +72,7 @@ const Services = () => {
       for (let i = startFrame; i <= endFrame; i++) {
         const img = new Image();
         const frameNum = String(i).padStart(3, '0');
-        img.src = `/frames/ezgif-frame-${frameNum}.jpg`;
+        img.src = `frames/ezgif-frame-${frameNum}.jpg`;
       }
     };
     preloadImages();
@@ -84,7 +84,7 @@ const Services = () => {
       <div className="services__background">
         <div className="services__canvas-container">
           <img 
-            src={`/frames/ezgif-frame-${String(currentFrame).padStart(3, '0')}.jpg`} 
+            src={`frames/ezgif-frame-${String(currentFrame).padStart(3, '0')}.jpg`} 
             alt="Animation Frame" 
             className="services__frame-image"
           />
