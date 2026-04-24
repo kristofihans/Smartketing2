@@ -117,9 +117,8 @@
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
-    height: auto;
-    aspect-ratio: 16 / 9;
-    min-height: 250px;
+    height: 100vh;
+    height: 100svh; /* Better support for mobile toolbars */
   }
 
   .hero__scroll-text {

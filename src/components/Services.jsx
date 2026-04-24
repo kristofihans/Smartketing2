@@ -95,7 +95,7 @@ const Services = () => {
       >
         <div className="services__header">
           <h2 className="services__title">
-            Servicii care transformă
+            SERVICII
           </h2>
           <p className="services__subtitle">
             Tot ce ai nevoie pentru a domina digital-ul, sub un singur acoperiș.

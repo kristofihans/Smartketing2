@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback } from 'react';
+import { useRef, useState, useCallback, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Hero.css';
 
@@ -6,6 +6,16 @@ const Hero = () => {
   const forwardRef = useRef(null);
   const reverseRef = useRef(null);
   const [activeVideo, setActiveVideo] = useState('forward');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleForwardEnd = useCallback(() => {
     setActiveVideo('reverse');
@@ -25,6 +35,9 @@ const Hero = () => {
     }
   }, []);
 
+  const videoSrc = isMobile ? 'herobackgroundvideomobile.mp4' : 'herobackgroundvideo.mp4';
+  const reverseVideoSrc = isMobile ? 'herobackgroundvideomobilereverse.mp4' : 'herobackgroundvideoreverse.mp4';
+
   return (
     <section className="hero" id="hero">
       {/* Video Background — Forward */}
@@ -32,7 +45,7 @@ const Hero = () => {
         <video
           ref={forwardRef}
           className={`hero__video ${activeVideo === 'forward' ? 'hero__video--active' : ''}`}
-          src="herobackgroundvideo.mp4"
+          src={videoSrc}
           autoPlay
           muted
           playsInline
@@ -42,7 +55,7 @@ const Hero = () => {
         <video
           ref={reverseRef}
           className={`hero__video ${activeVideo === 'reverse' ? 'hero__video--active' : ''}`}
-          src="herobackgroundvideoreverse.mp4"
+          src={reverseVideoSrc}
           muted
           playsInline
           preload="auto"
