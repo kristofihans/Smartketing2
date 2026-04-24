@@ -9,6 +9,12 @@
   background: var(--color-bg);
 }
 
+@media (max-width: 768px) {
+  .services {
+    height: 600vh; /* More room for long mobile grid */
+  }
+}
+
 .services__background {
   position: sticky;
   top: 0;
@@ -165,16 +171,13 @@
 }
 
 @media (max-width: 768px) {
-  .services {
-    height: auto; /* Disable scroll-background sync on mobile for better usability? Or keep it? */
-  }
-  
-  .services__background,
   .services__content-wrapper {
     position: relative;
     height: auto;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
   }
-  
+
   .services__grid {
     grid-template-columns: 1fr;
     gap: var(--space-sm);
