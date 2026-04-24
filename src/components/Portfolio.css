@@ -100,9 +100,9 @@
   font-size: 0.85rem;
   font-weight: 600;
   color: #fff;
-  background: transparent;
+  background: var(--gradient-button);
   border: 1px solid var(--color-accent-1);
-  border-radius: 0px;
+  border-radius: var(--radius-full);
   transition: var(--transition-fast);
   cursor: pointer;
   position: relative;
@@ -111,23 +111,10 @@
   letter-spacing: 0.08em;
 }
 
-.btn-show-more::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--color-accent-1);
-  opacity: 0;
-  transition: var(--transition-fast);
-  z-index: -1;
-}
-
 .btn-show-more:hover {
+  background: transparent;
   border-color: var(--color-accent-1);
   transform: translateY(-2px);
-}
-
-.btn-show-more:hover::before {
-  opacity: 1;
 }
 
 .btn-show-more svg {

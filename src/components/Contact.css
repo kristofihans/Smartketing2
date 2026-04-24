@@ -93,8 +93,8 @@
   font-size: 0.85rem;
   font-weight: 600;
   color: #fff;
-  background: var(--color-accent-1);
-  border-radius: 0px;
+  background: var(--gradient-button);
+  border-radius: var(--radius-full);
   transition: var(--transition-fast);
   align-self: center;
   min-width: 220px;
@@ -105,8 +105,8 @@
 
 .contact__submit:hover {
   background: transparent;
-  color: var(--color-accent-2);
-  border-color: var(--color-accent-2);
+  color: #fff;
+  border-color: var(--color-accent-1);
   transform: translateY(-2px);
 }
 

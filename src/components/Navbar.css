@@ -82,22 +82,22 @@
 
 /* CTA Button — Brutalist */
 .navbar__cta {
-  padding: 0.65rem 1.6rem;
+  padding: 0.75rem 2rem;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: #fff;
-  background: var(--color-accent-1);
-  border-radius: 0px;
+  background: var(--gradient-button);
+  border-radius: var(--radius-full);
   transition: var(--transition-fast);
   border: 1px solid var(--color-accent-1);
 }
 
 .navbar__cta:hover {
   background: transparent;
-  color: var(--color-accent-2);
-  border-color: var(--color-accent-2);
+  color: #fff;
+  border-color: var(--color-accent-1);
   transform: translateY(-2px);
 }
 
@@ -191,9 +191,17 @@
     font-size: 0.85rem;
     font-weight: 600;
     color: #fff;
-    background: var(--color-accent-1);
-    border-radius: 0px;
+    background: var(--gradient-button);
+    border: 1px solid var(--color-accent-1);
+    border-radius: var(--radius-full);
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    transition: var(--transition-fast);
+  }
+
+  .navbar__mobile-cta:active {
+    background: transparent;
+    color: #fff;
+    border-color: var(--color-accent-1);
   }
 }

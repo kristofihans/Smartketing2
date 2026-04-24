@@ -21,6 +21,7 @@
   --gradient-primary: var(--color-accent-1);
   --gradient-secondary: var(--color-accent-3);
   --gradient-glow: radial-gradient(ellipse at 50% 0%, rgba(220, 38, 38, 0.10) 0%, transparent 70%);
+  --gradient-button: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #450a0a 100%);
 
   /* Typography — Syne Display + Inter Body */
   --font-heading: 'Orbitron', sans-serif;
@@ -35,12 +36,12 @@
   --space-2xl: 7.2rem;
   --space-3xl: 9.6rem;
 
-  /* Border radius — Brutalist: sharp corners */
-  --radius-sm: 0px;
-  --radius-md: 0px;
-  --radius-lg: 0px;
-  --radius-xl: 0px;
-  --radius-full: 0px;
+  /* Border radius — Rounded */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 24px;
+  --radius-full: 100px;
 
   /* Transitions */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
